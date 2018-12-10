@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bet-Efrei</title>
+    
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/proto_page_accueil.css" %}"/>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" ></script>
+
+</head>
+<body>
+
+    <span class="container-fluid title">
+        <a class="logo" href="proto_page_accueil.html">
+            <img src="https://cdn.pbrd.co/images/HPdTvqu.png" width="300px" class="d-inline-block align-top" alt="" > 
+            
+        </a>
+        <span class="search">
+            <form class="form-inline">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+        </span>                         
+    </span>
+    
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container navbar_container">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="proto_classement.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Classement
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="proto_classement.html">Général</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="proto_classement.html">Groupe(s)</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="proto_classement.html">Catégories</a>
+                    </div>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="proto_calendar.html">Calendrier</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="proto_paris.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Mes paris
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="proto_paris.html">Ma sélection</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="proto_paris.html">Mes favoris</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="proto_paris.html">Mes anciens paris</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+    <div id="colonne1">
+        <table class="table">
+            <thead>
+                <tr class="table_title">
+                    <th colspan="2">TOP 10</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry the Bird</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <th scope="row">7</th>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <th scope="row">8</th>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <th scope="row">9</th>
+                    <td>...</td>
+                </tr>
+                <tr>
+                    <th scope="row">10</th>
+                    <td>...</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="colonne2">
+        <div class="card card-selection">
+            <div class="card-header">
+            MA SELECTION
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="card card-body-selection">
+                        <div class="card-header">
+                            
+                        </div>
+                        <div class="card-body">
+                            
+                        </div>
+                        <div class="card-footer text-muted">  
+                            
+                        </div>           
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    Côte totale =
+                </li>
+                <li class="list-group-item btn-selection">
+                    <button class="btn btn-outline-success" type="submit">Parier</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    {% for match in matches %}
+    <div id="centre">
+        <div class="card card-centre">
+            <div class="card-header card-header-center">
+                
+            </div>
+            <div class="card-body">
+                <p>{{match.0}} VS {{match.1}}</p>
+                <p>DATE : {{match.2}}</p>
+                {% if match.3 == "AWAY_TEAM" %}
+                    <p>GAGANT : {{match.1}}</p>
+                {% elif match.3 == "HOME_TEAM" %}
+                    <p>GAGANT : {{match.0}}</p>
+                {% endif %}
+            </div>
+            <div class="card-footer text-muted">  
+                <button class="btn btn-card-center-left" type="submit"></button>
+                <button class="btn btn-card-center-center" type="submit"></button>
+                <button class="btn btn-card-center-right" type="submit"></button>
+            </div>           
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>

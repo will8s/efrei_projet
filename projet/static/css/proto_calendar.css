@@ -1,0 +1,185 @@
+body {
+    background-color: white;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 11px;
+}
+
+.logo{
+    position: relative;
+    align-items: center;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    background-color: rgb(243, 200, 82);
+    height: 80px;
+    margin: auto;
+    display: flex;
+    position: relative;
+}
+
+.search {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
+
+.navbar {
+    height: 40px;
+    /*background-color: rgb(206, 151, 0);*/
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    font-size: 14px;
+}
+
+div#colonne1 {
+	float: left;
+	width: 22%;
+	background: whitesmoke;
+}
+
+.table {
+    border-collapse: collapse;
+    border: 2px ridge black;
+    margin-top: 20px;
+    margin-left: 10%;
+    margin-bottom: 100%;
+    width: 80%;
+}
+
+.table_title {
+    background-color: rgb(57, 196, 62);
+}
+
+td {
+    border: 1px solid white;
+}
+
+th {
+    border: 1px solid white;
+    border-right: 1px solid rgb(226, 226, 226);
+    text-align: center;
+    font-size: 12px;
+}
+
+div#colonne2 {
+	float: right;
+	width: 22%;
+    background: whitesmoke;
+}
+
+.card-selection {
+    font-size: 12px;
+    margin-top: 20px;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.card-header {
+    text-align: center;
+    font-size: 13px;
+}
+
+.btn-selection {
+    text-align: center;
+}
+
+div#centre {
+    background: white;
+    margin-left: 22%;
+    margin-right: 22%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-centre {
+    margin-top: 20px;
+    width: 90%;
+    margin-left: 5%;
+    height: 150px;
+}
+.card-header-center {
+    height: 20%;
+}
+
+.card-body {
+    height: 40%;
+}
+
+.card-footer {
+    height: 40%;
+}
+
+.btn-card-center-left {
+    height: 80%;
+    width: 10%;
+    margin-left: 25%
+}
+
+.btn-card-center-center {
+    height: 80%;
+    width: 10%;
+    margin-left: 10%
+}
+
+.btn-card-center-right {
+    height: 80%;
+    width: 10%;
+    margin-left: 10%
+}
+
+ul.tabs, .tabs li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.tabs li {
+    float: left;
+    display: block;
+}
+
+.tabs:after {
+    display: table;
+    content: ' ';
+    clear: both
+}
+
+.tabs a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.tabs a:hover {
+    text-decoration: none;
+    color: inherit;
+    background: rgb(211, 211, 211);
+}
+
+.tabs a {
+    display: inline-block;
+    background-color: rgb(241, 241, 241);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    padding: 10px 15px;
+}
+
+.tabs .active a {
+    background-color: rgb(244, 205, 96);
+}
+
+.tabs-content {
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
