@@ -96,3 +96,12 @@ div#centre {
     margin-left: 10%;
     height:auto;
 }
+
+.card-body{
+    margin: auto;
+}
+
+.data_date{
+    display: flex;
+    justify-content: flex-end;
+}

@@ -151,17 +151,17 @@
     </div>
     {% for match in matches %}
     <div id="centre">
-        <div class="card card-centre">
-            <div class="card-header card-header-center">
-                
+        <div class="card card-centre ">
+            <div class="card-header card-header-center ">
+                <div class = "data_date">DATE : {{match.2}}</div>
             </div>
             <div class="card-body">
-                <p>{{match.0}} VS {{match.1}}</p>
-                <p>DATE : {{match.2}}</p>
+                <div class="data_equipe">{{match.0}} VS {{match.1}}</div>
+                
                 {% if match.3 == "AWAY_TEAM" %}
-                    <p>GAGANT : {{match.1}}</p>
+                    <div class="data_gagnant">GAGANT : {{match.1}}</div>
                 {% elif match.3 == "HOME_TEAM" %}
-                    <p>GAGANT : {{match.0}}</p>
+                    <div class="data_gagnant">GAGANT : {{match.0}}</div>
                 {% endif %}
             </div>
             <div class="card-footer text-muted">  
