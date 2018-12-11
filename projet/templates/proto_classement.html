@@ -9,7 +9,7 @@
     <title>Bet-Efrei</title>
     
     <link rel="stylesheet" type="text/css" media="screen" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="{% static "css/proto_page_accueil.css" %}"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static "css/proto_classement.css" %}"/>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" ></script>
@@ -148,33 +148,68 @@
                 </li>
             </ul>
         </div>
-        <div class="Champions_league">
-                <a class="twitter-timeline" data-lang="fr" data-height="800" data-theme="light" data-link-color="#FAB81E" href="https://twitter.com/ChampionsLeague?ref_src=twsrc%5Etfw">Tweets by ChampionsLeague</a>
-                 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
     </div>
-    {% for match in matches %}
+
     <div id="centre">
-        <div class="card card-centre ">
-            <div class="card-header card-header-center ">
-                <div class = "data_date">{{match.2}}</div>
+        
+        <ul class="tabs">
+            <li class="active"><a href="#General" data-toggle="tab">Général</a></li>
+            <li><a href="#Groups" data-toggle="tab">Groupes</a></li>
+            <li><a href="#Categories" data-toggle="tab">Catégories</a></li>
+        </ul>
+        
+        <div class="tabs-content">
+            <div class="tab-content active" id="AllGames">    
+                <div class="card card-centre">
+                    <div class="card-header card-header-center">
+                        
+                    </div>
+                    <div class="card-body">
+                        
+                    </div>
+                    <div class="card-footer text-muted">  
+                        <button class="btn btn-card-center-left" type="submit"></button>
+                        <button class="btn btn-card-center-center" type="submit"></button>
+                        <button class="btn btn-card-center-right" type="submit"></button>
+                    </div>           
+                </div>
+
+                <div class="card card-centre">
+                    <div class="card-header card-header-center">
+                        
+                    </div>
+                    <div class="card-body">
+                        
+                    </div>
+                    <div class="card-footer text-muted">  
+                    
+                    </div>           
+                </div>
+
+                <div class="card card-centre">
+                    <div class="card-header card-header-center">
+                        
+                    </div>
+                    <div class="card-body">
+                        
+                    </div>
+                    <div class="card-footer text-muted">  
+                    
+                    </div>           
+                </div>
             </div>
-            <div class="card-body">
-                <div class="data_equipe">{{match.0}} VS {{match.1}}</div>
-                
-                {% if match.3 == "AWAY_TEAM" %}
-                    <div class="data_gagnant">GAGANT : {{match.1}}</div>
-                {% elif match.3 == "HOME_TEAM" %}
-                    <div class="data_gagnant">GAGANT : {{match.0}}</div>
-                {% endif %}
+            <div class="tab-content" id="General">
+                starf
             </div>
-            <div class="card-footer text-muted">  
-                <button class="btn btn-card-center-left" type="submit"></button>
-                <button class="btn btn-card-center-center" type="submit"></button>
-                <button class="btn btn-card-center-right" type="submit"></button>
-            </div>           
+            <div class="tab-content" id="Groups">
+                yeah
+            </div>
+            <div class="tab-content"id="Categories">
+                loooool
+            </div>
         </div>
     </div>
-    {% endfor %}
+    <script src="tab_classement.js"></script>
+
 </body>
 </html>
