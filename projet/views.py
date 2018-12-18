@@ -67,21 +67,6 @@ def data_api(request):
 
 		matches.append(conteneur)
 		conteneur = ()
-	
-	"""
-	for i in range(5):
-
-		donnees[i].hometeam = matches[i]["homeTeam"]["name"]
-		donnees[i].awayteam = matches[i]["awayTeam"]["name"]
-		donnees[i].date = matches[i]["utcDate"]
-		donnees[i].winner = matches[i]["score"]["winner"]
-		donnees[i].score = matches[i]["score"]["fullTime"]
-		
-		match[i].append(response["matches"][i]["homeTeam"]["name"])
-		match[i].append(response["matches"][i]["awayTeam"]["name"])
-		match[i].append(response["matches"][i]["utcDate"])
-		match[i].append(response["matches"][i]["score"]["winner"])
-		match[i].append(response["matches"][i]["score"]["fullTime"])"""
 
 	return render(request,"proto_page_accueil.html",locals())
 

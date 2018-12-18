@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load staticfiles %}
+
 <html>
 <head>
     <meta charset="utf-8" />
@@ -9,7 +10,7 @@
     <title>Bet-Efrei</title>
     
     <link rel="stylesheet" type="text/css" media="screen" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="{% static "css/proto_paris.css" %}" />
+    <link rel="stylesheet" type="text/css" media="screen" href="{% static "css/proto_paris.css"%}" />
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" ></script>
@@ -19,13 +20,13 @@
 <body>
 
     <span class="container-fluid title">
-        <a class="logo" href="proto_page_accueil.html">
+        <a class="logo" href="{% url "accueil" %}">
             <img src="https://cdn.pbrd.co/images/HPdTvqu.png" width="300px" class="d-inline-block align-top" alt="" > 
             
         </a>
         <span class="search">
             <form class="form-inline">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             </form>
         </span>                         
@@ -36,32 +37,32 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="proto_classement.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="{% url "proto_classement" %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Classement
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="proto_classement.html">Général</a>
+                        <a class="dropdown-item" href="{% url "proto_classement" %}">Général</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="proto_classement.html">Groupe(s)</a>
+                        <a class="dropdown-item" href="{% url "proto_classement" %}">Groupe(s)</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="proto_classement.html">Catégories</a>
+                        <a class="dropdown-item" href="{% url "proto_classement" %}">Catégories</a>
                     </div>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="proto_calendar.html">Calendrier</a>
+                    <a class="nav-link" href="{% url "proto_calendar" %}">Calendrier</a>
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="proto_paris.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="{% url "proto_paris" %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Mes paris
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="proto_paris.html">Ma sélection</a>
+                        <a class="dropdown-item" href="{% url "proto_paris" %}">Ma sélection</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="proto_paris.html">Mes favoris</a>
+                        <a class="dropdown-item" href="{% url "proto_paris" %}">Mes favoris</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="proto_paris.html">Mes anciens paris</a>
+                        <a class="dropdown-item" href="{% url "proto_paris" %}">Mes anciens paris</a>
                     </div>
                 </li>
             </ul>
@@ -144,7 +145,7 @@
                     Côte totale =
                 </li>
                 <li class="list-group-item btn-selection">
-                    <button class="btn btn-outline-success" type="submit">Parier</button>
+                    <button class="btn btn-warning" type="submit">Parier</button>
                 </li>
             </ul>
         </div>
@@ -159,47 +160,28 @@
         </ul>
         
         <div class="tabs-content">
-            <div class="tab-content active" id="AllGames">    
-                <div class="card card-centre">
-                    <div class="card-header card-header-center">
-                        
-                    </div>
-                    <div class="card-body">
-                        
-                    </div>
-                    <div class="card-footer text-muted">  
-                        <button class="btn btn-card-center-left" type="submit"></button>
-                        <button class="btn btn-card-center-center" type="submit"></button>
-                        <button class="btn btn-card-center-right" type="submit"></button>
-                    </div>           
-                </div>
-
-                <div class="card card-centre">
-                    <div class="card-header card-header-center">
-                        
-                    </div>
-                    <div class="card-body">
-                        
-                    </div>
-                    <div class="card-footer text-muted">  
-                    
-                    </div>           
-                </div>
-
-                <div class="card card-centre">
-                    <div class="card-header card-header-center">
-                        
-                    </div>
-                    <div class="card-body">
-                        
-                    </div>
-                    <div class="card-footer text-muted">  
-                    
-                    </div>           
-                </div>
-            </div>
-            <div class="tab-content" id="Selection">
-                starf
+            <div class="tab-content active" id="Selection">    
+                <table class="table-main">
+                    <thead>
+                        <tr class="table-main_title">
+                            <th class="th-center" colspan="2"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th class="th-center" scope="row">1</th>
+                            <td class="-center">.......</td>
+                        </tr>
+                        <tr>
+                            <th class="th-center" scope="row">2</th>
+                            <td class="-center">.......</td>
+                        </tr>
+                        <tr>
+                            <th class="th-center" scope="row">3</th>
+                            <td class="-center">.......</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div class="tab-content" id="Favorites">
                 yeah
